@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './Camera.module.scss'
+import {Badge} from '../Badge/Badge'
 
 const Camera = () => {
     return (
         <div>
-            Camera
+            <Badge type={'light'} color={'red'}>Badge</Badge>
         </div>
     )
 }

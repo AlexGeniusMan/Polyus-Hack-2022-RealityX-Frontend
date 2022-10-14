@@ -1,0 +1,88 @@
+@use '../../../styles/design-tokens' as dt;
+
+.badge {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 4px 8px;
+    line-height: 15px;
+    font-size: 12px;
+    border-radius: 44px;
+
+    //  Font
+    font-family: dt.$typo-font-p-medium-family;
+    font-style: dt.$typo-font-p-medium-style;
+    font-weight: dt.$typo-font-p-medium-weight;
+}
+
+.badge-primary {
+    color: dt.$blue-100;
+
+    &.badge-solid {
+        background: dt.$blue-100;
+        color: #FFFFFF;
+    }
+
+    &.badge-outline {
+        background: #FFFFFF;
+    }
+
+    &.badge-light {
+        background: dt.$blue-20;
+    }
+}
+
+.badge-green {
+    color: dt.$green-100;
+
+    &.badge-solid {
+        background: dt.$green-100;
+        color: #FFFFFF;
+    }
+
+    &.badge-outline {
+        background: #FFFFFF;
+    }
+
+    &.badge-light {
+        background: dt.$green-20;
+    }
+}
+
+.badge-red {
+    color: dt.$red-100;
+
+    &.badge-solid {
+        background: dt.$red-100;
+        color: #FFFFFF;
+    }
+
+    &.badge-outline {
+        background: #FFFFFF;
+    }
+
+    &.badge-light {
+        background: dt.$red-20;
+    }
+}
+
+.badge-orange {
+    color: dt.$orange-100;
+
+    &.badge-solid {
+        background: dt.$orange-100;
+        color: #FFFFFF;
+    }
+
+    &.badge-outline {
+        background: #FFFFFF;
+    }
+
+    &.badge-light {
+        background: dt.$orange-20;
+    }
+}

@@ -22,24 +22,17 @@ $general-100: #131523;
 //$primary-color-005: rgba(10, 44, 96, 0.05);
 
 // Green colors
-$green-100: #05874F;
-$green-90: #1FD286;
-$green-80: #25E191;
-$green-70: #48E9A5;
-$green-60: #74EFB9;
-$green-50: #95F6CC;
-$green-40: #C4F8E2;
-$green-30: #DAF9EC;
+$green-100: #2CAC0B;
+$green-20: rgba(44, 172, 11, 0.2);
 
 // Red colors
-$red-100: #F0142F;
-$red-90: #F12B43;
-$red-80: #F34359;
-$red-70: #F45A6D;
-$red-60: #F8919D;
-$red-50: #FAB3BC;
-$red-40: #FCD5D9;
-$red-30: #FDE7EA;
+$red-100: #9A1200;
+$red-20: rgba(154, 18, 0, 0.2);
+
+// Blue colors
+$blue-100: #231FE2;
+$blue-20: rgba(35, 31, 226, 0.2);
+
 
 // Yellow colors
 $yellow-100: #FFB608;
@@ -52,14 +45,8 @@ $yellow-40: #FFE29C;
 $yellow-30: #FFE9B5;
 
 // Orange colors
-$orange-100: #e67700;
-$orange-90: #e9851a;
-$orange-80: #eb9233;
-$orange-70: #eea04d;
-$orange-60: #f0ad66;
-$orange-50: #f3bb80;
-$orange-40: #f5c999;
-$orange-30: #fcebd9;
+$orange-100: #D38B00;
+$orange-20: rgba(211, 139, 0, 0.2);
 
 // Other
 $gray: #d9d9d9;
