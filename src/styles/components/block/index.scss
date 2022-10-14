@@ -1,0 +1,21 @@
+@use '../../../styles/design-tokens' as dt;
+
+.container {
+    padding: 24px;
+    background: #FFFEFE;
+    border: 1px solid dt.$gray;
+    border-radius: 16px;
+
+    & .title {
+        position: relative;
+        padding: 4px 8px;
+        margin-bottom: 4px;
+        color: #000;
+
+        font-style: dt.$typo-font-p-semi-bold-style;
+        font-weight: dt.$typo-font-p-semi-bold-weight;
+        font-size: dt.$typo-font-p-semi-bold-size;
+        line-height: dt.$typo-font-p-semi-bold-line-height;
+    }
+}
+
