@@ -1,0 +1,10 @@
+@use '../../../styles/design-tokens' as dt;
+
+.container {
+    min-height: 100vh;
+    background: #f9f9f9;
+
+    & .layout {
+        padding: 15px 35px;
+    }
+}

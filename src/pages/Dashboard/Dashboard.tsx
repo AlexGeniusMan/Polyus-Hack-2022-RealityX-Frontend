@@ -1,16 +1,15 @@
 import React from 'react'
 import styles from './Dashboard.module.scss'
-import Header from '../../components/Header/Header'
 import Block from '../../components/Block/Block'
 import Camera from '../../components/Camera/Camera'
 import Analytics from '../../components/Analytics/Analytics'
 import Settings from '../../components/Settings/Settings'
 import Logs from '../../components/Logs/Logs'
+import Layout from '../../components/Layout/Layout'
 
 export const Dashboard = () => {
     return (
-        <div className={styles['container']}>
-            <Header />
+        <Layout>
             <div className={styles['layout']}>
                 <Block title={'Камера'} className={styles['camera']}>
                     <Camera />
@@ -25,7 +24,7 @@ export const Dashboard = () => {
                     <Logs />
                 </Block>
             </div>
-        </div>
+        </Layout>
     )
 }
 

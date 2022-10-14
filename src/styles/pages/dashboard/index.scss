@@ -1,21 +1,14 @@
 @use '../../../styles/design-tokens' as dt;
 
-.container {
-    min-height: 100vh;
-    background: #f9f9f9;
-
-    & .layout {
-        display: grid;
-        grid-column-gap: 18px;
-        grid-row-gap: 16px;
-        padding: 15px 35px;
-
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
+.layout {
+    display: grid;
+    grid-column-gap: 18px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
         "camera analytics"
         "settings logs"
-        ;
-    }
+    ;
 
     & .camera {
         grid-area: camera;
@@ -30,4 +23,3 @@
         grid-area: logs;
     }
 }
-
