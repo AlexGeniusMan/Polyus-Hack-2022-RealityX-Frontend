@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './Dashboard.module.scss'
+import Video from '../../components/Video/Video'
 
-const Dashboard = () => {
-
+export const Dashboard = () => {
     return (
-        <div className={styles.container}>
-
+        <div>
+            <Video />
         </div>
     )
 }
