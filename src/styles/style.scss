@@ -1,0 +1,15 @@
+.outer {
+    position: relative;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.container {
+    background-color: rgba(25, 111, 240, 0.05);
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 0 40px;
+    position: relative;
+}
