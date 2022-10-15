@@ -1,1 +1,21 @@
 @use '../../../styles/design-tokens' as dt;
+
+.container {
+
+    & .footer {
+        @include dt.flexible();
+        justify-content: space-between;
+        padding: 8px 16px;
+
+        & .name, & .status {
+            font-size: dt.$typo-font-p-regular-size;
+            font-weight: dt.$typo-font-p-regular-weight;
+            line-height: dt.$typo-font-p-regular-line-height;
+            color: dt.$additional;
+        }
+        & .status {
+            @include dt.flexible();
+            gap: 4px;
+        }
+    }
+}
