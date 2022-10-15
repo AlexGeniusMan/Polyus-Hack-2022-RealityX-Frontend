@@ -10,7 +10,7 @@ const Classes = () => {
     return (
         <div className={styles['container']}>
             <div className={styles['tableContainer']}>
-                <TableComponent className={styles['table']} columns={columns} data={data} />
+                <TableComponent tableLayout={'fixed'} className={styles['table']} columns={columns} data={data} />
             </div>
             <div className={styles['button']}>
                 {!changing && <Button color={'blue'} onClick={() => handleButtonClick(changing)} children={'Редактировать'} />}

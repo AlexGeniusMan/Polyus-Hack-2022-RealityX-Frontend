@@ -40,7 +40,6 @@ export const useClasses = () => {
 
     const [columns, setColumns] = useState<TableClassesColumnsType[]>([])
     const [data, setData] = useState<TableClassesDataType[]>([])
-    // const [tempData, setTempData] = useState<TableClassesDataType[]>([])
 
     const handleButtonClick = useCallback((isChange: boolean) => {
         if(!isChange) {

@@ -21,7 +21,7 @@ export const Dashboard = () => {
                 <Block title={'Аналитика'} className={styles['analytics']}>
                     <Analytics />
                 </Block>
-                <Block title={'Максимальное значение негабарита'} className={styles['settings']}>
+                <Block title={'Минимальное значение негабарита'} className={styles['settings']}>
                     <Settings />
                 </Block>
                 <Block title={'Логирование негабаритов'} className={styles['logs']}>

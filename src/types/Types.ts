@@ -36,6 +36,16 @@ export type TableClassesDataType = {
     result: string
     key: string
 }
+export type TableLogsDataType = {
+    time: string
+    min: number
+    max: number
+    count: number
+    delta_max: string
+    delta_min: string
+    frame: string
+    key: string
+}
 export type TableClassesValueType = {
     min: number
     max: number

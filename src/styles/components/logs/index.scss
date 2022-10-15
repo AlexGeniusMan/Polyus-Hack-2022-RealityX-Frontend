@@ -1,4 +1,42 @@
 @use '../../../styles/design-tokens' as dt;
 
+.tableContainer {
+    margin-bottom: 15px;
+    padding: 12px 24px;
+
+    & .table {
+        & table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 2px;
+            color: dt.$additional;
+        }
+
+        & th {
+            width: 14.2%;
+            padding: 6px 0;
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: dt.$orange-100;
+            background: dt.$orange-20;
+            text-align: center;
+            opacity: .6;
+        }
+        & td {
+            opacity: .6;
+            height: 36px;
+            font-size: 12px;
+            line-height: 24px;
+            width: 25%;
+            padding: 4px 16px;
+            text-align: center;
+            border: 1px solid dt.$orange-20;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
 
 

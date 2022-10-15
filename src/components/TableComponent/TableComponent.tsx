@@ -3,9 +3,9 @@ import Table from 'rc-table'
 import styles from './TableComponent.module.scss'
 import cl from 'classnames'
 
-const TableComponent:FC<MyProps> = ({columns, data, className}) => {
+const TableComponent:FC<MyProps> = ({columns, data, className, tableLayout = 'auto'}) => {
     return (
-        <Table className={cl(styles['table'], className)} columns={columns} data={data} />
+        <Table tableLayout={tableLayout} className={cl(styles['table'], className)} columns={columns} data={data} />
     )
 }
 
@@ -15,4 +15,5 @@ type MyProps = {
     columns: any
     data: any
     className?: string
+    tableLayout?: 'auto' | 'fixed'
 }
