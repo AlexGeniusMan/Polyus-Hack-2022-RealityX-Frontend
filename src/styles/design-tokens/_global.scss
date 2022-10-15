@@ -1,0 +1,26 @@
+@use "./color" as dt;
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    background: dt.$orange-50;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dt.$additional;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: dt.$additional;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: dt.$additional;
+}

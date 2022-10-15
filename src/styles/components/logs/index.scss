@@ -5,6 +5,9 @@
     padding: 12px 24px;
 
     & .table {
+        max-height: 250px;
+        overflow-y: auto;
+
         & table {
             width: 100%;
             border-collapse: separate;

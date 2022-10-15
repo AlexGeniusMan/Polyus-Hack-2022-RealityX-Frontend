@@ -1,6 +1,7 @@
 import {toast} from 'react-toastify'
 
 export const errorNotify = (errorText?: string) => toast.error(errorText || 'Something went wrong');
+export const infoNotify = (text?: string) => toast.error(text || 'Something happened');
 
 export const getCurrentTime = (date?: Date) => {
     const localDate = date || new Date()
