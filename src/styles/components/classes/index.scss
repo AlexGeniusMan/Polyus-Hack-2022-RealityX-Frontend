@@ -1,1 +1,44 @@
 @use '../../../styles/design-tokens' as dt;
+
+.container {
+    & .tableContainer {
+        margin-bottom: 15px;
+        padding: 12px 24px;
+
+        & .table {
+            & table {
+                table-layout: fixed;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 2px;
+                color: dt.$additional;
+            }
+
+            & th {
+                width: 25%;
+                padding: 6px 0;
+                border-width: 1px 0.5px;
+                border-style: solid;
+                border-color: dt.$orange-100;
+                background: dt.$orange-20;
+                text-align: center;
+            }
+            & td {
+                font-size: 12px;
+                line-height: 24px;
+                width: 25%;
+                padding: 4px 16px;
+                text-align: center;
+                border: 1px solid dt.$orange-20;
+            }
+            & tr {
+                margin-bottom: 2px;
+            }
+        }
+    }
+    & .button {
+        width: max-content;
+        margin-left: auto;
+    }
+}
+

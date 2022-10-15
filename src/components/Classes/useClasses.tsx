@@ -61,13 +61,13 @@ export const useClasses = () => {
     ]
 
     const data = [
-        { class: 1, result: 14, key: '0' },
-        { class: 2, result: 14, key: '1' },
-        { class: 3, result: 14, key: '2' },
-        { class: 4, result: 14, key: '3' },
-        { class: 5, result: 14, key: '4' },
-        { class: 6, result: 14, key: '5' },
-        { class: 7, result: 2, key: '6' },
+        { class: 1, result: '14%', key: '0' },
+        { class: 2, result: '14%', key: '1' },
+        { class: 3, result: '14%', key: '2' },
+        { class: 4, result: '14%', key: '3' },
+        { class: 5, result: '14%', key: '4' },
+        { class: 6, result: '14%', key: '5' },
+        { class: 7, result: '2%', key: '6' },
     ];
 
     return {columns, data}

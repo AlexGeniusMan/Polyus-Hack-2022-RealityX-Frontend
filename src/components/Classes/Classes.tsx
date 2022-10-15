@@ -9,8 +9,8 @@ const Classes = () => {
 
     return (
         <div className={styles['container']}>
-            <div className={styles['table']}>
-                <TableComponent columns={columns} data={data} />
+            <div className={styles['tableContainer']}>
+                <TableComponent className={styles['table']} columns={columns} data={data} />
             </div>
             <div className={styles['button']}>
                 <Button children={'Сохранить'} />
