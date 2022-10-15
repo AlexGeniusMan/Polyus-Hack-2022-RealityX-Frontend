@@ -25,10 +25,6 @@
         border-color: #000;
     }
 
-    & i {
-        color: dt.$additional;
-    }
-
     & .input-outer {
         width: 100%;
         box-sizing: border-box;
@@ -48,7 +44,7 @@
             background-color: transparent;
             cursor: inherit;
 
-            color: dt.$additional;
+            color: #000;
             font-size: 14px;
             font-weight: 500;
             line-height: 24px;

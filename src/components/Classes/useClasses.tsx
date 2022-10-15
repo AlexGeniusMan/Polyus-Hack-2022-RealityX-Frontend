@@ -79,13 +79,15 @@ export const useClasses = () => {
                     title: 'Минимальное',
                     dataIndex: 'min',
                     key: 'min',
-                    render: (child: any, row: any, index: any) => <Input type={'number'} className={styles['input']} onChange={(e) => handleChange(e, 'min', index)} color={'orange'} defaultValue={String(tempValue[index].min)} />,
+                    render: (child: any, row: any, index: any) => <Input type={'number'} className={styles['input']} onChange={(e) => handleChange(e, 'min', index)}
+                                                                         color={'orange'} defaultValue={String(tempValue[index].min)} placeholder='Min' />,
                 },
                 {
                     title: 'Максимальное',
                     dataIndex: 'max',
                     key: 'max',
-                    render: (child: any, row: any, index: any) => <Input type={'number'} className={styles['input']} onChange={(e) => handleChange(e, 'max', index)} color={'orange'} defaultValue={String(tempValue[index].max)} />,
+                    render: (child: any, row: any, index: any) => <Input type={'number'} className={styles['input']} onChange={(e) => handleChange(e, 'max', index)}
+                                                                         color={'orange'} defaultValue={String(tempValue[index].max)} placeholder='Max' />,
                 },
                 {
                     title: 'Выход класса, %',
