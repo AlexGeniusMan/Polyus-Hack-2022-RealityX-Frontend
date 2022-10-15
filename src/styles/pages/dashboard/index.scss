@@ -13,12 +13,14 @@
 
     & .camera {
         grid-area: camera;
+        user-select: none;
     }
     & .classes {
         grid-area: classes;
     }
     & .analytics {
         grid-area: analytics;
+        user-select: none;
     }
     & .settings {
         grid-area: settings;

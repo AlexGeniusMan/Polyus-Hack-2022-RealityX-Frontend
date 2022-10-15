@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Camera.module.scss'
 import {Badge} from '../Badge/Badge'
-import {stopwatch} from '../../utils/utils'
+import {errorNotify, infoNotify, stopwatch} from '../../utils/utils'
 import ModalComponent from '../ModalComponent/ModalComponent'
 import Settings from '../Settings/Settings'
 import {Button} from '../Button/Button'
@@ -15,6 +15,12 @@ const Camera = () => {
     }
     const handleClose = () => {
         setVisible(false)
+    }
+    const handleInfoNotify = () => {
+        infoNotify('Что-то произошло')
+    }
+    const handleErrorNotify = () => {
+        errorNotify('Что-то произошло')
     }
     useEffect(() => {
         setInterval(() => {
@@ -33,7 +39,15 @@ const Camera = () => {
                 </div>
             </div>
             <div className={styles['main']}>
-                <button onClick={handleClick}>Open me</button>
+                <div>
+                    <button onClick={handleClick}>Open me</button>
+                </div>
+                <div>
+                    <button onClick={() => handleInfoNotify()}>info</button>
+                </div>
+                <div>
+                    <button onClick={() => handleErrorNotify()}>error</button>
+                </div>
                 <ModalComponent visible={visible} onClose={handleClose} title={'Титульник'}>
                     <p>
                         privet omlet
