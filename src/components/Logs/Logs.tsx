@@ -1,31 +1,52 @@
 import React from 'react'
 import styles from './Logs.module.scss'
-import {Input} from '../Input/Input'
-import {Button} from '../Button/Button'
-import Icon from '../Icon/Icon'
+import Table from 'rc-table'
+
 
 const Logs = () => {
+    const columns = [
+        {
+            title: 'Время',
+            dataIndex: 'time',
+            key: 'time',
+        },
+        {
+            title: 'Min / кадр',
+            dataIndex: 'min',
+            key: 'min',
+        },
+        {
+            title: 'Max / кадр',
+            dataIndex: 'max',
+            key: 'max',
+        },
+        {
+            title: 'Кол-во',
+            dataIndex: 'count',
+            key: 'count',
+        },
+        {
+            title: '∆ макс',
+            dataIndex: 'delta_max',
+            key: 'delta_max',
+        },
+        {
+            title: '∆ мин',
+            dataIndex: 'delta_min',
+            key: 'delta_min',
+            // render: () => <a href="#">Delete</a>,
+        },
+    ];
+
+    const data = [
+        { time: '13:22:48', min: 45, max: 45, count: 6, delta_max: '+12', delta_min: '+12', key: '1' },
+        { time: '13:24:38', min: 13, max: 13, count: 12, delta_max: '+2', delta_min: '+2', key: '2' },
+        { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '3' },
+    ];
+
     return (
-        <div>
-            Logs
-            <Input placeholder={'kasjdkjsak'} />
-            <Input title={'Turtles'} placeholder={'kasjdkjsak'} />
-            <Button>Привет</Button>
-            <Button
-                icon={<Icon name={'ri-check-line'} type={'line'} size={20} />}
-                iconPosition='left'
-                success
-            />
-            <Button
-                children={'asdjsa'}
-                icon={<Icon name={'arrow-right-s-fill'} type={'fill'} size={20} />}
-                iconPosition='right'
-            />
-            <Input placeholder={'kasjdkjsak'} children={
-                <Button
-                    icon={<Icon name={'arrow-right-s-fill'} type={'fill'} size={20} />}
-                />
-            } />
+        <div className={styles['container']}>
+            <Table className={styles['table']} columns={columns} data={data} />
         </div>
     )
 }
