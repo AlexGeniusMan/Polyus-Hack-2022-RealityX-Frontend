@@ -5,7 +5,7 @@ import {useClasses} from './useClasses'
 import {Button} from '../Button/Button'
 
 const Classes = () => {
-    const {columns, data} = useClasses()
+    const {columns, data, changing, handleButtonClick, handleSave} = useClasses()
 
     return (
         <div className={styles['container']}>
@@ -13,7 +13,10 @@ const Classes = () => {
                 <TableComponent className={styles['table']} columns={columns} data={data} />
             </div>
             <div className={styles['button']}>
-                <Button children={'Сохранить'} />
+                {!changing && <Button color={'blue'} onClick={() => handleButtonClick(changing)} children={'Редактировать'} />}
+                {changing && <Button color={'gray'} onClick={() => handleButtonClick(changing)} children={'Отмена'} />}
+                {changing && <Button color={'blue'} children={'Добавить строку'} />}
+                {changing && <Button color={'green'} onClick={handleSave} children={'Сохранить'} />}
             </div>
         </div>
     )

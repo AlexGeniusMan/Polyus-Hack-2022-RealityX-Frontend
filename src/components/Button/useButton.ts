@@ -8,7 +8,10 @@ export function useButton(props:ButtonProps) {
     const conditions:{[index: string]:boolean} = {
       "button": true,
       "button-icon-only": !props.children,
-      "button-green": Boolean(props.success),
+      "button-green": Boolean(props.success) || props.color === 'green',
+      "button-orange": props.color === 'orange',
+      "button-blue": props.color === 'blue',
+      "button-gray": props.color === 'gray',
     };
     return getClasses(conditions, styles, props.className)
   }, [props]);

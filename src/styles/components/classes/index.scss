@@ -17,13 +17,16 @@
             & th {
                 width: 25%;
                 padding: 6px 0;
-                border-width: 1px 0.5px;
+                border-width: 1px 0;
                 border-style: solid;
                 border-color: dt.$orange-100;
                 background: dt.$orange-20;
                 text-align: center;
+                opacity: .6;
             }
             & td {
+                opacity: .6;
+                height: 36px;
                 font-size: 12px;
                 line-height: 24px;
                 width: 25%;
@@ -39,6 +42,15 @@
     & .button {
         width: max-content;
         margin-left: auto;
+        @include dt.flexible();
+        gap: 10px;
     }
 }
 
+.input {
+    line-height: 24px;
+    padding: 0 5px;
+    & input {
+        font-size: 12px !important;
+    }
+}

@@ -10,4 +10,5 @@ export interface ButtonProps extends DefaultParams, ClickableObjectMini {
     loading?: boolean;
     success?: boolean;
     loadingIcon?: React.ReactNode<Icon>;
+    color?: 'green' | 'blue' | 'orange' | 'gray'
 }

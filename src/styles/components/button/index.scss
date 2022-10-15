@@ -79,3 +79,31 @@
         color: dt.$green-100;
     }
 }
+.button-blue {
+    background: dt.$blue-20;
+    color: dt.$blue-100;
+
+    i {
+        color: dt.$blue-100;
+    }
+}
+.button-orange{
+    background: dt.$orange-20;
+    color: dt.$orange-100;
+
+    i {
+        transition: color 0.2s ease;
+        color: dt.$orange-100;
+    }
+
+}
+.button-gray{
+    background: dt.$gray;
+    color: dt.$additional;
+
+    i {
+        transition: color 0.2s ease;
+        color: dt.$additional;
+    }
+
+}

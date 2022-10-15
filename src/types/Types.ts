@@ -1,3 +1,4 @@
+import React from 'react'
 import {CSSProperties} from 'react'
 
 export interface DefaultParams{
@@ -20,4 +21,22 @@ export interface ClickableObjectMini {
 
     /** On blur event */
     onBlur?: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+export type TableClassesColumnsType = {
+    title: string,
+    key: string,
+    dataIndex: string,
+    render?: (value: any, row: any, index: number) => void
+}
+export type TableClassesDataType = {
+    class: number
+    min: number
+    max: number
+    result: string
+    key: string
+}
+export type TableClassesValueType = {
+    min: number
+    max: number
 }
