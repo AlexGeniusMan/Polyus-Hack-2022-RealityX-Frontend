@@ -22,7 +22,6 @@ export function useInput(props: InputProps) {
     const classes = useMemo(() => {
         const conditions: {[index: string]: boolean} = {
             'input-wrapper': true,
-            'input-wrapper-medium': true,
             'input-wrapper-disabled': Boolean(props.disabled),
         }
         return getClasses(conditions, styles, props.className)

@@ -28,6 +28,7 @@ export const Input = forwardRef((props: InputProps, ref: any) => {
                        onBlur={props.onBlur}
                 />
             </label>
+            {props.children}
         </div>
     )
 })

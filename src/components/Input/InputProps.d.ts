@@ -26,4 +26,5 @@ export interface InputProps extends DefaultParams {
     pattern?: string;
     maxLength?: number;
     tabIndex?: number
+    children?: string | React.ReactNode,
 }
