@@ -1,12 +1,13 @@
 import React, {FC} from 'react'
 import styles from './ModalComponent.module.scss'
-import 'rc-dialog/assets/index.css'
+import '../../styles/components/modal/modal.scss'
 import Dialog from 'rc-dialog'
 import cl from 'classnames'
+import Icon from '../Icon/Icon'
 
 const ModalComponent:FC<MyProps> = ({children, footer, visible, title, onClose, className}) => {
     return (
-        <Dialog visible={visible} animation={'zoom'}  onClose={onClose} className={cl(className, styles['container'])}>
+        <Dialog closeIcon={<Icon name={'close-fill'} size={20} type={'fill'} />} visible={visible} animation={'zoom'}  onClose={onClose} className={cl(className, styles['container'])}>
             <div className={styles['title']}>
                 {title}
             </div>
