@@ -12,7 +12,7 @@
     position: relative;
 
     border: 1px solid dt.$additional;
-    border-radius: 6px;
+    border-radius: 4px;
     width: 100%;
     padding: 3px 16px;
 
@@ -48,7 +48,7 @@
             background-color: transparent;
             cursor: inherit;
 
-            color: #000;
+            color: dt.$additional;
             font-size: 14px;
             font-weight: 500;
             line-height: 24px;
@@ -64,15 +64,14 @@
     }
 }
 
-.input-text-error {
-    margin-top: 5px;
-    color: dt.$red-100;
+.input-orange {
+    border: 1px solid dt.$orange-50;
 
-    font-family: dt.$typo-font-p-regular-family;
-    font-style: dt.$typo-font-p-regular-style;
-    font-weight: dt.$typo-font-p-medium-weight;
-    font-size: 14px;
-    line-height: 24px;
+    & .input-outer {
+        & .input {
+
+        }
+    }
 }
 
 .input-icon-left {

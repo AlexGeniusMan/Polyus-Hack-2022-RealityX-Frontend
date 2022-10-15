@@ -1,6 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react'
-import {Input} from '../Input/Input'
-import styles from './Logs.module.scss'
 import {TableClassesColumnsType, TableLogsDataType} from '../../types/Types'
 
 export const useLogs = () => {

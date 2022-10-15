@@ -23,6 +23,7 @@ export function useInput(props: InputProps) {
         const conditions: {[index: string]: boolean} = {
             'input-wrapper': true,
             'input-wrapper-disabled': Boolean(props.disabled),
+            'input-orange': props.color === 'orange',
         }
         return getClasses(conditions, styles, props.className)
     }, [props])

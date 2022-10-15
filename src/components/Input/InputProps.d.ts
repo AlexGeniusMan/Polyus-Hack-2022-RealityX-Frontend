@@ -24,6 +24,7 @@ export interface InputProps extends DefaultParams {
     autoFocus?: boolean;
     type?: InputTypeEnum;
     pattern?: string;
+    color?: 'default' | 'orange';
     title?: string;
     maxLength?: number;
     tabIndex?: number
