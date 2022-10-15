@@ -9,6 +9,7 @@ const Logs = () => {
         <div>
             Logs
             <Input placeholder={'kasjdkjsak'} />
+            <Input title={'Turtles'} placeholder={'kasjdkjsak'} />
             <Button>Привет</Button>
             <Button
                 icon={<Icon name={'ri-check-line'} type={'line'} size={20} />}

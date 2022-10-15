@@ -24,6 +24,7 @@ export interface InputProps extends DefaultParams {
     autoFocus?: boolean;
     type?: InputTypeEnum;
     pattern?: string;
+    title?: string;
     maxLength?: number;
     tabIndex?: number
     children?: string | React.ReactNode,

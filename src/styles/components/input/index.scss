@@ -1,5 +1,12 @@
 @use '../../../styles/design-tokens' as dt;
 
+.title {
+    color: #000;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
 
 .input-wrapper {
     position: relative;
