@@ -1,0 +1,34 @@
+@use '../../../styles/design-tokens' as dt;
+
+.container {
+    border-radius: 16px;
+
+    & .title {
+        padding: 10px 14px;
+        margin-bottom: 10px;
+
+        font-size: dt.$typo-font-p-semi-bold-size;
+        line-height: dt.$typo-font-p-semi-bold-line-height;
+        font-weight: dt.$typo-font-p-semi-bold-weight;
+    }
+
+    & .footer {
+        margin-top: 10px;
+    }
+
+}
+.animation {
+    position: relative;
+    animation: appear 0.2s linear;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

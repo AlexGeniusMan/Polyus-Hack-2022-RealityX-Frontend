@@ -1,14 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Camera.module.scss'
 import {Badge} from '../Badge/Badge'
 import {getCurrentTime} from '../../utils/utils'
+import ModalComponent from '../ModalComponent/ModalComponent'
 
 const Camera = () => {
     const time = getCurrentTime()
+    const [visible, setVisible] = useState(false)
+    const handleClick = () => {
+        setVisible((visible) => !visible)
+    }
+    const handleClose = () => {
+        setVisible(false)
+    }
     return (
         <div className={styles['container']}>
             <div>
-                Camera
+                <button onClick={handleClick}>Open me</button>
+                <ModalComponent visible={visible} onClose={handleClose} title={'Титульник'}>
+                    <p>
+                        privet omlet
+                    </p>
+                </ModalComponent>
             </div>
             <div className={styles['footer']}>
                 <div className={styles['name']}>
