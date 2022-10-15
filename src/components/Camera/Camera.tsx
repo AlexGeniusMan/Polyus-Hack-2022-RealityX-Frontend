@@ -9,13 +9,6 @@ import Icon from '../Icon/Icon'
 
 const Camera = () => {
     const [time, setTime] = useState<string>('')
-    const [visible, setVisible] = useState(false)
-    const handleClick = () => {
-        setVisible((visible) => !visible)
-    }
-    const handleClose = () => {
-        setVisible(false)
-    }
     const handleInfoNotify = () => {
         infoNotify('Что-то произошло')
     }
@@ -40,19 +33,11 @@ const Camera = () => {
             </div>
             <div className={styles['main']}>
                 <div>
-                    <button onClick={handleClick}>Open me</button>
-                </div>
-                <div>
                     <button onClick={() => handleInfoNotify()}>info</button>
                 </div>
                 <div>
                     <button onClick={() => handleErrorNotify()}>error</button>
                 </div>
-                <ModalComponent visible={visible} onClose={handleClose} title={'Титульник'}>
-                    <p>
-                        privet omlet
-                    </p>
-                </ModalComponent>
                 <div>
                     Camera
                 </div>

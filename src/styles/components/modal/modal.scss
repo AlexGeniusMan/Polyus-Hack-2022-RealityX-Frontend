@@ -1,6 +1,6 @@
 .rc-dialog {
     position: relative;
-    width: auto;
+    width: max-content;
     margin: 10px;
 }
 .rc-dialog-wrap {
@@ -114,7 +114,7 @@
 }
 @media (min-width: 768px) {
     .rc-dialog {
-        width: 600px;
+        max-width: 1000px;
         margin: 30px auto;
     }
 }

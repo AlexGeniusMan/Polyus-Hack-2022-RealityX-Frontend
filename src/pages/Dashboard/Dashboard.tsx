@@ -6,6 +6,7 @@ import Analytics from '../../components/Analytics/Analytics'
 import Logs from '../../components/Logs/Logs'
 import Layout from '../../components/Layout/Layout'
 import Classes from '../../components/Classes/Classes'
+import ClassesModal from '../../components/Classes/ClassesModal'
 
 export const Dashboard = () => {
     return (
@@ -14,10 +15,10 @@ export const Dashboard = () => {
                 <Block title={'Камера'} className={styles['camera']}>
                     <Camera />
                 </Block>
-                <Block title={'Статистика по классам'} className={styles['classes']}>
-                    <Classes />
-                </Block>
-                <Block title={'Аналитика'} className={styles['analytics']}>
+                {/*<Block title={'Статистика по классам'} className={styles['classes']}>*/}
+                {/*    <Classes />*/}
+                {/*</Block>*/}
+                <Block title={'Аналитика'} className={styles['analytics']} button={<ClassesModal />}>
                     <Analytics />
                 </Block>
                 {/*<Block title={'Минимальное значение негабарита'} className={styles['settings']}>*/}
