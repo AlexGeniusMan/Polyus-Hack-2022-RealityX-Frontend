@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../Icon/icon'
+import Icon from '../Icon/Icon'
 import {DefaultParams} from '../../types/Types'
 
 type InputTypeEnum = 'text' | 'email' | 'password' | 'search' | 'tel' | 'date' | 'dateRange'

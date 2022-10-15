@@ -1,0 +1,13 @@
+import React from 'react'
+import Icon from '../Icon/Icon'
+import {ClickableObjectMini, DefaultParams} from '../../types/Types'
+
+export interface ButtonProps extends DefaultParams, ClickableObjectMini {
+    children?: React.ReactNode | string;
+    iconPosition?: 'left' | 'right';
+    icon?: React.ReactNode<Icon>;
+    disabled?: boolean;
+    loading?: boolean;
+    success?: boolean;
+    loadingIcon?: React.ReactNode<Icon>;
+}
