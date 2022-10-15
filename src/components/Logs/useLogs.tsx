@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react'
 import {TableClassesColumnsType, TableLogsDataType} from '../../types/Types'
+import LogsModal from './LogsModal'
 
 export const useLogs = () => {
 
@@ -40,6 +41,7 @@ export const useLogs = () => {
             title: 'Фрейм',
             dataIndex: 'frame',
             key: 'frame',
+            render: (value: any, row: TableLogsDataType, index: number) => <LogsModal row={row} index={index} />
         },
     ] as TableClassesColumnsType[]
 

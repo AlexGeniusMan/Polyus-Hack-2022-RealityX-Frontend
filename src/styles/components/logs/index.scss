@@ -51,5 +51,20 @@
     }
 }
 
+.modal {
+
+    &-button {
+        background-color: transparent;
+        color: dt.$blue-100;
+        cursor: pointer;
+    }
+    &-img {
+
+        & .img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
 
 

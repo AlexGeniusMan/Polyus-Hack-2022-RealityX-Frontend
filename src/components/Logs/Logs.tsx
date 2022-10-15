@@ -4,7 +4,6 @@ import TableComponent from '../TableComponent/TableComponent'
 import {useLogs} from './useLogs'
 
 const Logs = () => {
-
     const {columns, data} = useLogs()
 
     return (
