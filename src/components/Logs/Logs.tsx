@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Logs.module.scss'
-import Table from 'rc-table'
-
+import TableComponent from '../TableComponent/TableComponent'
 
 const Logs = () => {
     const columns = [
@@ -34,7 +33,6 @@ const Logs = () => {
             title: '∆ мин',
             dataIndex: 'delta_min',
             key: 'delta_min',
-            // render: () => <a href="#">Delete</a>,
         },
     ];
 
@@ -46,7 +44,7 @@ const Logs = () => {
 
     return (
         <div className={styles['container']}>
-            <Table className={styles['table']} columns={columns} data={data} />
+            <TableComponent columns={columns} data={data} />
         </div>
     )
 }

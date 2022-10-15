@@ -1,1 +1,13 @@
 @use '../../../styles/design-tokens' as dt;
+
+.container {
+
+    & .table {
+        margin-bottom: 15px;
+    }
+    & .button {
+        width: max-content;
+        margin-left: auto;
+    }
+}
+
