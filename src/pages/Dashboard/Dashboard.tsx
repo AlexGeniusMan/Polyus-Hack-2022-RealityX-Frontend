@@ -6,6 +6,7 @@ import Analytics from '../../components/Analytics/Analytics'
 import Settings from '../../components/Settings/Settings'
 import Logs from '../../components/Logs/Logs'
 import Layout from '../../components/Layout/Layout'
+import Classes from '../../components/Classes/Classes'
 
 export const Dashboard = () => {
     return (
@@ -14,10 +15,13 @@ export const Dashboard = () => {
                 <Block title={'Камера'} className={styles['camera']}>
                     <Camera />
                 </Block>
+                <Block title={'Статистика по классам'} className={styles['classes']}>
+                    <Classes />
+                </Block>
                 <Block title={'Аналитика'} className={styles['analytics']}>
                     <Analytics />
                 </Block>
-                <Block title={'Настройки'} className={styles['settings']}>
+                <Block title={'Максимальное значение негабарита'} className={styles['settings']}>
                     <Settings />
                 </Block>
                 <Block title={'Логирование негабаритов'} className={styles['logs']}>

@@ -1,5 +1,5 @@
 import {forwardRef, useCallback, useMemo} from "react";
-import {IconProps} from "./IconProps";
+import {IconProps} from './IconProps'
 import {getAllEvents} from "../../utils/getAllEvents";
 import styles from './Icon.module.scss'
 

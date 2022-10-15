@@ -1,0 +1,91 @@
+@use '../../../styles/design-tokens' as dt;
+
+
+.input-wrapper {
+    position: relative;
+
+    border: 1px solid dt.$additional;
+    border-radius: 6px;
+    width: 350px;
+
+    &:focus-within {
+        color: #000;
+        border-color: #000;
+    }
+
+    & i {
+        color: dt.$additional;
+    }
+
+    & .input-outer {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: text;
+        gap: 8px;
+
+        & .input {
+            width: 100%;
+            padding: 0;
+
+            outline: none;
+            border: none;
+            background-color: transparent;
+            cursor: inherit;
+
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+
+            &::placeholder {
+                color: dt.$additional;
+            }
+        }
+        & .input-icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.input-text-error {
+    margin-top: 5px;
+    color: dt.$red-100;
+
+    font-family: dt.$typo-font-p-regular-family;
+    font-style: dt.$typo-font-p-regular-style;
+    font-weight: dt.$typo-font-p-medium-weight;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.input-icon-left {
+    order: -1;
+}
+.input-icon-right {
+    order: 1;
+    justify-content: space-between;
+}
+
+.input-wrapper-medium{
+    & .input-outer {
+        height: 32px;
+        padding: 4px 16px;
+
+        & .input-icon > i {
+            font-size: 22px;
+        }
+    }
+}
+
+.input-wrapper-disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+    user-select: none;
+    & .input-outer, .input {
+        cursor: not-allowed;
+    }
+}
