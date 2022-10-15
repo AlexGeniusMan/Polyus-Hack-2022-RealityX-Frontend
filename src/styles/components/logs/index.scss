@@ -24,6 +24,11 @@
             background: dt.$orange-20;
             text-align: center;
             opacity: .6;
+            cursor: default;
+            transition: background 0.4s ease;
+            &:hover {
+                background: dt.$orange-50;
+            }
         }
         & td {
             opacity: .6;
@@ -37,6 +42,11 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+            cursor: default;
+            transition: border 0.4s ease;
+            &:hover {
+                border: 1px solid dt.$orange-50;
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 .container {
 
-    & .footer {
+    & .header {
         @include dt.flexible();
         justify-content: space-between;
         padding: 8px 16px;
@@ -16,6 +16,17 @@
         & .status {
             @include dt.flexible();
             gap: 4px;
+        }
+    }
+
+    & .main {
+        margin-bottom: 15px;
+    }
+
+    & .footer {
+
+        & .minimalValue {
+            max-width: 260px;
         }
     }
 }

@@ -78,6 +78,15 @@
     i {
         color: dt.$green-100;
     }
+
+    &:hover {
+        background: dt.$green-20;
+        color: dt.$green-100;
+
+        i {
+            color: dt.$green-100;
+        }
+    }
 }
 .button-blue {
     background: dt.$blue-20;

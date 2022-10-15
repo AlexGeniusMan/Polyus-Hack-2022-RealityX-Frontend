@@ -14,7 +14,12 @@ export const Button = forwardRef((props: ButtonProps, ref: any) => {
 
   const LocalIcon:FC<{icon?: ReactNode}> = React.memo(({icon}) => (
     <>
-      {icon && <span className={iconClasses}>{props.icon}</span>}
+      {icon && <span className={iconClasses}>{
+          props.success
+              ?
+              <Icon name={'ri-check-line'} type={'line'} color={'green'} size={20} />
+          : props.icon
+      }</span>}
     </>
   ))
   const LoadingIcon:FC<{loadingIcon?: ReactNode}> = React.memo(({loadingIcon}) => (

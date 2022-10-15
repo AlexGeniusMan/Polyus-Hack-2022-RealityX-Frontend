@@ -8,9 +8,9 @@ import {Input} from '../Input/Input'
 const Settings = () => {
     return (
         <div className={styles['container']}>
-            <Input className={styles['input']} placeholder={'20'} children={
+            <Input title={'Минимальное значение негабарита'} className={styles['input']} placeholder={'12'} children={
                 <Button
-                    icon={<Icon name={'arrow-right-s-fill'} type={'fill'} size={20} />}
+                    icon={<Icon name={'arrow-right-s-fill'} type={'fill'} size={24} />}
                 />
             } />
         </div>

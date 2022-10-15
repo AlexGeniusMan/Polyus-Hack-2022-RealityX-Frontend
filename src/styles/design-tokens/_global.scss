@@ -5,11 +5,12 @@
     width: 5px;
     height: 5px;
     background: dt.$orange-50;
+    border-radius: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 /* Handle */

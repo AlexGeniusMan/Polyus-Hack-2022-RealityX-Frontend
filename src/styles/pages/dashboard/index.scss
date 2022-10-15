@@ -6,9 +6,8 @@
     grid-row-gap: 16px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "camera settings"
-        "camera logs"
         "camera analytics"
+        "logs analytics"
         "classes analytics"
     ;
 
