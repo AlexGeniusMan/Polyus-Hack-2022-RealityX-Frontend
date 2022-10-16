@@ -1,15 +1,13 @@
 import {baseURL} from "./api";
 import axios from "axios";
-import {LogsDataType} from '../types/Types'
 
-type LogsDataResponseType = {
-    data: LogsDataType[]
-}
-
-export const logsApi = {
-    getLogs() {
+export const classesApi = {
+    setClassesParams(value: {min: number, max: number}[]) {
         const accessToken = 'Bearer ' + localStorage.getItem('access')
-        return axios.get<LogsDataResponseType>(baseURL + `api/app/statistics?oversize=50`,{
+        const data = new FormData()
+        data.append('parametr', JSON.stringify(value))
+
+        return axios.post<any>(baseURL + `api/app/statistics?oversize=50`, data, {
             headers: {
                 'Authorization': `${accessToken}`
             }

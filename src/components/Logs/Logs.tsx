@@ -9,9 +9,11 @@ import NoData from '../NoData/NoData'
 
 const Logs = () => {
     const dispatch = useDispatch<TypedDispatch>()
+    const oversizeValue = useSelector((state: AppStateType) => state.settings.oversizeValue)
+
     const logs = useSelector((state: AppStateType) => state.logs.logs)
 
-    const {columns, data} = useLogs(logs)
+    const {columns, data} = useLogs(logs, oversizeValue)
 
     useEffect(() => {
         dispatch(getLogs())

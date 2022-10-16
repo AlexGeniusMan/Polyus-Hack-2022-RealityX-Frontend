@@ -36,7 +36,7 @@ export const getLogs = (): ThunkType => {
         try {
             let data = await logsApi.getLogs()
             console.log('getLogs', data)
-            dispatch(statActions.statReceived(data))
+            dispatch(statActions.statReceived(data.data))
 
             dispatch(authActions.toggleIsFetching(false))
         } catch (e:any) {

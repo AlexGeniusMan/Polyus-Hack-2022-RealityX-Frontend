@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {LogsDataType, TableClassesColumnsType, TableLogsDataType} from '../../types/Types'
 import {getCurrentTime} from '../../utils/utils'
 
-export const useLogs = (logs: LogsDataType[]) => {
+export const useLogs = (logs: LogsDataType[], oversizeValue: number) => {
     const [data, setData] = useState<TableLogsDataType[]>([
         { time: '13:22:48', min: 45, max: 45, count: 6, delta_max: '+12', delta_min: '+12', key: '1' },
         { time: '13:24:38', min: 13, max: 13, count: 12, delta_max: '+2', delta_min: '+2', key: '2' },
@@ -54,20 +54,21 @@ export const useLogs = (logs: LogsDataType[]) => {
     ] as TableClassesColumnsType[]
 
     useEffect(() => {
-        if(logs && logs.length > 0)
-        setData(
-            logs.map((item, index) => {
-                return {
-                    time: getCurrentTime(new Date(item.timestamp)),
-                    min: item.min_oversize,
-                    max: item.max_oversize,
-                    count: item.amount,
-                    delta_max: '0',
-                    delta_min: '0',
-                    key: index,
-                }
-            })
-        )
+        if(logs && logs.length > 0) {
+            setData(
+                logs.map((item, index) => {
+                    return {
+                        time: getCurrentTime(new Date(item.timestamp)),
+                        min: item.min_oversize,
+                        max: item.max_oversize,
+                        count: item.amount,
+                        delta_max: String(item.max_oversize - oversizeValue),
+                        delta_min: String(item.min_oversize - oversizeValue),
+                        key: index,
+                    }
+                })
+            )
+        }
     }, [logs])
 
     return {columns, data}
