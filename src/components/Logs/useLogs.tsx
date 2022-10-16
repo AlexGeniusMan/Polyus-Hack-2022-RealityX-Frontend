@@ -1,9 +1,7 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {TableClassesColumnsType, TableLogsDataType} from '../../types/Types'
-import LogsModal from './LogsModal'
 
 export const useLogs = () => {
-
     const [data, setData] = useState<TableLogsDataType[]>([])
 
     const columns = [
@@ -37,12 +35,12 @@ export const useLogs = () => {
             dataIndex: 'delta_min',
             key: 'delta_min',
         },
-        {
-            title: 'Фрейм',
-            dataIndex: 'frame',
-            key: 'frame',
-            render: (value: any, row: TableLogsDataType, index: number) => <LogsModal row={row} index={index} />
-        },
+        // {
+        //     title: 'Фрейм',
+        //     dataIndex: 'frame',
+        //     key: 'frame',
+        //     render: (value: any, row: TableLogsDataType, index: number) => <LogsModal row={row} index={index} />
+        // },
     ] as TableClassesColumnsType[]
 
     useEffect(() => {
@@ -50,14 +48,14 @@ export const useLogs = () => {
     }, )
     useEffect(() => {
         setData([
-            { time: '13:22:48', min: 45, max: 45, count: 6, delta_max: '+12', delta_min: '+12', key: '1', frame: '12_22_33.pngdasdsadsadasdsa' },
-            { time: '13:24:38', min: 13, max: 13, count: 12, delta_max: '+2', delta_min: '+2', key: '2', frame: '12_22_33.png' },
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '3', frame: '12_22_33.png'},
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '4', frame: '12_22_33.png'},
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '5', frame: '12_22_33.png'},
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '6', frame: '12_22_33.png'},
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '7', frame: '12_22_33.png'},
-            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '8', frame: '12_22_33.png'},
+            { time: '13:22:48', min: 45, max: 45, count: 6, delta_max: '+12', delta_min: '+12', key: '1' },
+            { time: '13:24:38', min: 13, max: 13, count: 12, delta_max: '+2', delta_min: '+2', key: '2' },
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '3'},
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '4'},
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '5'},
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '6'},
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '7'},
+            { time: '13:24:38', min: 13, max: 13, count: 5, delta_max: '+2', delta_min: '+2', key: '8'},
         ] as TableLogsDataType[])
     }, [])
 
