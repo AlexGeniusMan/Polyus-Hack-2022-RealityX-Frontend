@@ -34,7 +34,7 @@ const Graph:FC<any> = ({values, xAxes, yAxes, name, title, color}) => {
                         >
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey={xAxes} />
-                            <YAxis width={YBarWidth+10} />
+                            <YAxis width={YBarWidth+20} />
                             <Tooltip />
                             {/*<Line type="monotone" name='color_distance' dataKey="color_distance" stroke="green" activeDot={{ r: 8 }} />*/}
                             <Bar type="monotone" name={name} dataKey={yAxes} fill={color} fillOpacity={0.2} stroke={color} />
