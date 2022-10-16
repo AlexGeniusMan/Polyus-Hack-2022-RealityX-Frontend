@@ -5,8 +5,9 @@ import Camera from '../../components/Camera/Camera'
 import Analytics from '../../components/Analytics/Analytics'
 import Logs from '../../components/Logs/Logs'
 import Layout from '../../components/Layout/Layout'
-import Classes from '../../components/Classes/Classes'
 import ClassesModal from '../../components/Classes/ClassesModal'
+import {compose} from 'redux'
+import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 
 export const Dashboard = () => {
     return (
@@ -32,4 +33,6 @@ export const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default compose(
+    withAuthRedirect
+)(Dashboard)

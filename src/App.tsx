@@ -3,11 +3,16 @@ import './App.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard/Dashboard'
 import {ToastContainer} from 'react-toastify'
+import {Route, Routes} from 'react-router-dom'
+import Login from './pages/Login/Login'
 
 const App = () => {
     return (
         <>
-            <Dashboard />
+            <Routes>
+                <Route path='/login' element={<Login />} />
+                <Route path='*' element={<Dashboard />} />
+            </Routes>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}

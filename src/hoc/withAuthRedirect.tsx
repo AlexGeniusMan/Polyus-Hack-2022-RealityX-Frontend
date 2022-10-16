@@ -17,7 +17,7 @@ export function withAuthRedirect<WCP> (WrappedComponent: ComponentType<WCP>) {
 
     const RedirectComponent: React.FC<any> = (props) => {
         let {isAuth, ...restProps} = props
-        if(!isAuth) return <Navigate to={'/forbidden'} />
+        if(!isAuth) return <Navigate to={'/login'} />
 
         return (
             <WrappedComponent {...restProps} />
