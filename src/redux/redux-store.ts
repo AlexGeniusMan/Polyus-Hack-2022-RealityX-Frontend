@@ -8,7 +8,7 @@ import logsReducer from './logs-reducer'
 let rootReducer  = combineReducers({
     auth: authReducer,
     camera: cameraReducer,
-    stat: logsReducer,
+    logs: logsReducer,
 });
 
 type RootReducerType = typeof rootReducer //(globalState: AppStateType) => AppStateType

@@ -2,11 +2,11 @@ import {BaseThunkType, InferActionsTypes} from "./redux-store";
 import {errorsHandler} from "../utils/utils";
 import {authActions, AuthActionsType} from './auth-reducer'
 import {logsApi} from '../api/logs-api'
-import {StatDataType} from '../types/Types'
+import {LogsDataType} from '../types/Types'
 
 export type InitialStateType = typeof initialState
 let initialState = {
-    data: [] as StatDataType[]
+    logs: [] as LogsDataType[]
 }
 
 const logsReducer = (state = initialState, action: LogsActionsType):InitialStateType  => {
@@ -14,7 +14,7 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
         case 'PH/STAT/GET_STAT':
             return {
                 ...state,
-                data: action.payload.data
+                logs: action.payload.data
             }
         default:
             return state;
@@ -24,7 +24,7 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
 export type LogsActionsType = InferActionsTypes<typeof statActions>
 
 export const statActions = {
-    statReceived: (data: StatDataType[]) =>
+    statReceived: (data: LogsDataType[]) =>
         ({type: 'PH/STAT/GET_STAT', payload: {data}} as const),
 }
 

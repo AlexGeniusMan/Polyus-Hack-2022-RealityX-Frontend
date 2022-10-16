@@ -3,17 +3,9 @@ import styles from './Analytics.module.scss'
 import {useAnalytics} from './useAnalytics'
 import ResizableBox from '../../utils/ResizableBox'
 import {ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Scatter, Area, Bar} from 'recharts'
-import {useDispatch} from 'react-redux'
-import {TypedDispatch} from '../../redux/redux-store'
-import {getLogs} from '../../redux/logs-reducer'
-
 const Analytics = () => {
-    const dispatch = useDispatch<TypedDispatch>()
     const { data, width, YBarWidth, YBarRef, YMaxValue} = useAnalytics()
 
-    useEffect(() => {
-        dispatch(getLogs())
-    }, [])
     return (
         <>
             {/*Width of Y axis*/}

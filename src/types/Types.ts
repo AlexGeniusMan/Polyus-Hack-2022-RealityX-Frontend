@@ -43,14 +43,13 @@ export type TableLogsDataType = {
     count: number
     delta_max: string
     delta_min: string
-    frame: string
-    key: string
+    key: number | string
 }
 export type TableClassesValueType = {
     min: number
     max: number
 }
-export type StatDataType = {
+export type LogsDataType = {
     timestamp: string,
     min_oversize: number,
     max_oversize: number,
