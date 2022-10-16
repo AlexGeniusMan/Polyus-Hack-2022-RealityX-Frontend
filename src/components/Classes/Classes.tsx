@@ -11,6 +11,7 @@ const Classes = () => {
 
     const {columns, data, changing, handleButtonClick, handleSave} = useClasses(classes)
 
+
     return (
         <div className={styles['container']}>
             <div className={styles['tableContainer']}>

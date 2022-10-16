@@ -3,11 +3,15 @@ import {Input} from '../Input/Input'
 import styles from './Classes.module.scss'
 import {TableClassesColumnsType, TableClassesDataType, TableClassesValueType} from '../../types/Types'
 import {logsActions} from '../../redux/logs-reducer'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import {AppStateType} from '../../redux/redux-store'
 
 export const useClasses = (classes: any) => {
     const dispatch = useDispatch()
     const [changing, setChanging] = useState<boolean>(false)
+
+    const {class_1_percent, class_2_percent, class_3_percent, class_4_percent, class_5_percent, class_6_percent, class_7_percent} = useSelector((state: AppStateType) => state.logs.class_data)
+    // const class_data = useSelector((state: AppStateType) => state.logs.class_data)
 
     const [value, setValue] = useState<TableClassesValueType[]>()
     const [tempValue, setTempValue] = useState<TableClassesValueType[]>([])
@@ -105,17 +109,17 @@ export const useClasses = (classes: any) => {
         if(value) {
             setData(
                 [
-                    { class: 7, min: value[0].min, max: value[0].max, result: '14%', key: '0' },
-                    { class: 6, min: value[1].min, max: value[1].max, result: '14%', key: '1' },
-                    { class: 5, min: value[2].min, max: value[2].max, result: '14%', key: '2' },
-                    { class: 4, min: value[3].min, max: value[3].max, result: '14%', key: '3' },
-                    { class: 3, min: value[4].min, max: value[4].max, result: '14%', key: '4' },
-                    { class: 2, min: value[5].min, max: value[5].max, result: '14%', key: '5' },
-                    { class: 1, min: value[6].min, max: value[6].max, result: '2%', key: '6' },
+                    { class: 7, min: value[0].min, max: value[0].max, result: Math.round(Number(class_7_percent) * 100) + '%', key: '0' },
+                    { class: 6, min: value[1].min, max: value[1].max, result: Math.round(Number(class_6_percent) * 100) + '%', key: '1' },
+                    { class: 5, min: value[2].min, max: value[2].max, result: Math.round(Number(class_5_percent) * 100) + '%', key: '2' },
+                    { class: 4, min: value[3].min, max: value[3].max, result: Math.round(Number(class_4_percent) * 100) + '%', key: '3' },
+                    { class: 3, min: value[4].min, max: value[4].max, result: Math.round(Number(class_3_percent) * 100) + '%', key: '4' },
+                    { class: 2, min: value[5].min, max: value[5].max, result: Math.round(Number(class_2_percent) * 100) + '%', key: '5' },
+                    { class: 1, min: value[6].min, max: value[6].max, result: Math.round(Number(class_1_percent) * 100) + '%', key: '6' },
                 ]
             )
         }
-    }, [value])
+    }, [value, class_1_percent, class_2_percent, class_3_percent, class_4_percent, class_5_percent, class_6_percent, class_7_percent])
 
     return {columns, data, changing, setChanging, handleButtonClick, handleSave}
 }
