@@ -63,7 +63,7 @@ const Analytics = () => {
                 <Graph values={classesData} title={'Выход класса, %'} color={'green'} yAxes={'value'} xAxes={'index'} name={'Выходы класса'} />
             </div>
             <div>
-                <LineGraph values={classesLineData} title={'Куммулятивный'} color={'orange'} yAxes={'value'} xAxes={'index'} name={'Выходы класса'} />
+                <LineGraph values={classesLineData} title={'Кумулятивный'} color={'orange'} yAxes={'value'} xAxes={'index'} name={'Выходы класса'} />
             </div>
         </>
     )
