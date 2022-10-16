@@ -50,3 +50,10 @@ export type TableClassesValueType = {
     min: number
     max: number
 }
+export type StatDataType = {
+    timestamp: string,
+    min_oversize: number,
+    max_oversize: number,
+    amount: number,
+    fullness: number,
+}

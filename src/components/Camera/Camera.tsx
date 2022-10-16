@@ -6,8 +6,12 @@ import ModalComponent from '../ModalComponent/ModalComponent'
 import Settings from '../Settings/Settings'
 import {Button} from '../Button/Button'
 import Icon from '../Icon/Icon'
+import {useDispatch} from 'react-redux'
+import {TypedDispatch} from '../../redux/redux-store'
+import {getStream} from '../../redux/camera-reducer'
 
 const Camera = () => {
+    const dispatch = useDispatch<TypedDispatch>()
     const [time, setTime] = useState<string>('')
     const handleInfoNotify = () => {
         infoNotify('Что-то произошло')
@@ -20,6 +24,11 @@ const Camera = () => {
             setTime(stopwatch())
         }, 1000)
     }, [])
+
+    useEffect(() => {
+        // dispatch(getStream())
+    }, [])
+
     return (
         <div className={styles['container']}>
             <div className={styles['header']}>
