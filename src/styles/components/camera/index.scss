@@ -21,6 +21,11 @@
 
     & .main {
         margin-bottom: 15px;
+
+        & .stream {
+            display: block;
+            max-width: 100%;
+        }
     }
 
     & .footer {

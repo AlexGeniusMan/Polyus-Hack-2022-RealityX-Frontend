@@ -13,6 +13,6 @@ export const cameraAPI = {
                 'Authorization': `${accessToken}`
             }
         })
-            .then((response) => response.data)
+            .then((response) => response)
     },
 }

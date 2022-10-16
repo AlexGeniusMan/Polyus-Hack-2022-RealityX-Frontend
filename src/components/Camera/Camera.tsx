@@ -9,24 +9,14 @@ import Icon from '../Icon/Icon'
 import {useDispatch} from 'react-redux'
 import {TypedDispatch} from '../../redux/redux-store'
 import {getStream} from '../../redux/camera-reducer'
+import {baseURL} from '../../api/api'
 
 const Camera = () => {
-    const dispatch = useDispatch<TypedDispatch>()
     const [time, setTime] = useState<string>('')
-    const handleInfoNotify = () => {
-        infoNotify('Что-то произошло')
-    }
-    const handleErrorNotify = () => {
-        errorNotify('Что-то произошло')
-    }
     useEffect(() => {
         setInterval(() => {
             setTime(stopwatch())
         }, 1000)
-    }, [])
-
-    useEffect(() => {
-        // dispatch(getStream())
     }, [])
 
     return (
@@ -41,15 +31,7 @@ const Camera = () => {
                 </div>
             </div>
             <div className={styles['main']}>
-                <div>
-                    <button onClick={() => handleInfoNotify()}>info</button>
-                </div>
-                <div>
-                    <button onClick={() => handleErrorNotify()}>error</button>
-                </div>
-                <div>
-                    Camera
-                </div>
+                <img className={styles['stream']} src={baseURL + 'api/app/stream'} />
             </div>
             <div className={styles['footer']}>
                 <div className={styles['minimalValue']}>

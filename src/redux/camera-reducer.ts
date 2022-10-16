@@ -35,8 +35,8 @@ export const getStream = (): ThunkType => {
         dispatch(authActions.toggleIsFetching(true))
         try {
             let data = await cameraAPI.getStream()
-            console.log('getStream', data)
             debugger
+            console.log('getStream', data)
             dispatch(cameraActions.streamReceived())
 
             dispatch(authActions.toggleIsFetching(false))
