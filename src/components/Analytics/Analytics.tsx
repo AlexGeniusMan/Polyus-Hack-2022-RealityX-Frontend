@@ -57,7 +57,7 @@ const Analytics = () => {
     return (
         <>
             <div>
-                <LineGraph values={fullness} title={'Заполненность конвейера, %'} color={'blue'} yAxes={'value'} xAxes={'timestamp'} name={'Заполненность'}  />
+                <LineGraph values={fullness} title={'Заполненность конвейера'} color={'blue'} yAxes={'value'} xAxes={'timestamp'} name={'Заполненность'}  />
             </div>
             <div>
                 <Graph values={classesData} title={'Выход класса, %'} color={'green'} yAxes={'value'} xAxes={'index'} name={'Выходы класса'} />
