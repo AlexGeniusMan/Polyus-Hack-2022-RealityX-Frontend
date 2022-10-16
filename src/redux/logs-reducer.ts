@@ -11,19 +11,15 @@ let initialState = {
     class_data: {} as any,
     classes: [
         {
-            min: '250',
+            min: '110',
             max: '999',
         },
         {
-            min: '150',
-            max: '250',
-        },
-        {
             min: '100',
-            max: '150',
+            max: '110',
         },
         {
-            min: '80',
+            min: '90',
             max: '100',
         },
         {
@@ -31,15 +27,19 @@ let initialState = {
             max: '80',
         },
         {
-            min: '40',
+            min: '60',
             max: '70',
         },
         {
+            min: '50',
+            max: '60',
+        },
+        {
             min: '0',
-            max: '40',
+            max: '50',
         },
     ] as TableClassesValueType[],
-    oversize: '250' as string,
+    oversize: '500' as string,
 }
 
 const logsReducer = (state = initialState, action: LogsActionsType):InitialStateType  => {

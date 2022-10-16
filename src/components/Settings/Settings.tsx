@@ -10,8 +10,8 @@ import {logsActions} from '../../redux/logs-reducer'
 
 const Settings = () => {
     const dispatch = useDispatch<TypedDispatch>()
-    const [value, setValue] = useState<string>('250')
     const oversize = useSelector((state: AppStateType) => state.logs.oversize)
+    const [value, setValue] = useState<string>(oversize)
 
     useEffect(() => {
         setValue(oversize)
