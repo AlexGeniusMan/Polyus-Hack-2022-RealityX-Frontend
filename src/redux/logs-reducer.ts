@@ -8,6 +8,7 @@ export type InitialStateType = typeof initialState
 let initialState = {
     logs: [] as LogsDataType[],
     fullness: [] as AnalyzeFullnessDataType[],
+    class_data: {} as any,
     classes: [
         {
             min: '250',
@@ -48,6 +49,7 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
                 ...state,
                 logs: action.payload.data,
                 fullness: action.payload.fullness,
+                class_data: action.payload.class_data,
             }
         case 'PH/LOGS/CHANGE_CLASSES':
             return {
@@ -67,8 +69,8 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
 export type LogsActionsType = InferActionsTypes<typeof logsActions>
 
 export const logsActions = {
-    statReceived: (data: LogsDataType[], fullness: AnalyzeFullnessDataType[]) =>
-        ({type: 'PH/STAT/GET_STAT', payload: {data, fullness}} as const),
+    statReceived: (data: LogsDataType[], fullness: AnalyzeFullnessDataType[], class_data: any) =>
+        ({type: 'PH/STAT/GET_STAT', payload: {data, fullness, class_data}} as const),
     changeClasses: (classes: TableClassesValueType[]) =>
         ({type: 'PH/LOGS/CHANGE_CLASSES', payload: {classes}} as const),
     changeOversize: (oversize: string) =>
@@ -84,7 +86,7 @@ export const getLogs = (oversize: string,class1: string, class2: string, class3:
             let data = await logsApi.getLogs(oversize,class1,class2,class3,class4,class5,class6,class7)
             console.log('getLogs', data)
             if(data.is_oversize) errorNotify('Обнаружен негабарит')
-            dispatch(logsActions.statReceived(data.data, data.fullness))
+            dispatch(logsActions.statReceived(data.data, data.fullness, data.class_data))
 
             dispatch(authActions.toggleIsFetching(false))
         } catch (e:any) {

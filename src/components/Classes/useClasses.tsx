@@ -105,13 +105,13 @@ export const useClasses = (classes: any) => {
         if(value) {
             setData(
                 [
-                    { class: 1, min: value[0].min, max: value[0].max, result: '14%', key: '0' },
-                    { class: 2, min: value[1].min, max: value[1].max, result: '14%', key: '1' },
-                    { class: 3, min: value[2].min, max: value[2].max, result: '14%', key: '2' },
+                    { class: 7, min: value[0].min, max: value[0].max, result: '14%', key: '0' },
+                    { class: 6, min: value[1].min, max: value[1].max, result: '14%', key: '1' },
+                    { class: 5, min: value[2].min, max: value[2].max, result: '14%', key: '2' },
                     { class: 4, min: value[3].min, max: value[3].max, result: '14%', key: '3' },
-                    { class: 5, min: value[4].min, max: value[4].max, result: '14%', key: '4' },
-                    { class: 6, min: value[5].min, max: value[5].max, result: '14%', key: '5' },
-                    { class: 7, min: value[6].min, max: value[6].max, result: '2%', key: '6' },
+                    { class: 3, min: value[4].min, max: value[4].max, result: '14%', key: '4' },
+                    { class: 2, min: value[5].min, max: value[5].max, result: '14%', key: '5' },
+                    { class: 1, min: value[6].min, max: value[6].max, result: '2%', key: '6' },
                 ]
             )
         }

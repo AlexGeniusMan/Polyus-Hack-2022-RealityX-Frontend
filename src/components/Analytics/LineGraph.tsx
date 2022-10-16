@@ -3,7 +3,18 @@ import {useAnalytics} from './useAnalytics'
 import ResizableBox from '../../utils/ResizableBox'
 import styles from './Analytics.module.scss'
 
-import {Bar, CartesianGrid, ComposedChart, ResponsiveContainer, Scatter, Text, Tooltip, XAxis, YAxis} from 'recharts'
+import {
+    Bar,
+    CartesianGrid,
+    ComposedChart,
+    Line,
+    ResponsiveContainer,
+    Scatter,
+    Text,
+    Tooltip,
+    XAxis,
+    YAxis
+} from 'recharts'
 import NoData from '../NoData/NoData'
 
 const Graph:FC<any> = ({values, xAxes, yAxes, name, title, color}) => {
@@ -37,7 +48,7 @@ const Graph:FC<any> = ({values, xAxes, yAxes, name, title, color}) => {
                             <YAxis width={YBarWidth+10} />
                             <Tooltip />
                             {/*<Line type="monotone" name='color_distance' dataKey="color_distance" stroke="green" activeDot={{ r: 8 }} />*/}
-                            <Bar type="monotone" name={name} dataKey={yAxes} fill={color} fillOpacity={0.2} stroke={color} />
+                            <Line type="monotone" name={name} dataKey={yAxes} fill={color} fillOpacity={0.2} stroke={color} />
                             {/*<Line type="monotone" dataKey="uv" stroke="#82ca9d" />*/}
                         </ComposedChart>
                     </ResponsiveContainer>

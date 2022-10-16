@@ -6,6 +6,7 @@ type LogsDataResponseType = {
     data: LogsDataType[]
     fullness: AnalyzeFullnessDataType[]
     is_oversize: boolean
+    class_data: any
 }
 
 export const logsApi = {
