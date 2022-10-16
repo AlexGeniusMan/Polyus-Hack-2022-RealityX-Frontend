@@ -1,15 +1,25 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './Settings.module.scss'
 
 import {Button} from '../Button/Button'
 import Icon from '../Icon/Icon'
 import {Input} from '../Input/Input'
+import {useDispatch, useSelector} from 'react-redux'
+import {AppStateType, TypedDispatch} from '../../redux/redux-store'
+import {setOversizeValue} from '../../redux/settings-reducer'
 
 const Settings = () => {
-    const [value, setValue] = useState('250')
+    const dispatch = useDispatch<TypedDispatch>()
+    const [value, setValue] = useState<string>('250')
+    const oversizeValue = useSelector((state: AppStateType) => state.settings.oversizeValue)
+
+    useEffect(() => {
+        setValue(String(oversizeValue))
+    }, [oversizeValue])
 
     const handleSubmit = () => {
         console.log(value)
+        dispatch(setOversizeValue(value))
     }
 
     return (
