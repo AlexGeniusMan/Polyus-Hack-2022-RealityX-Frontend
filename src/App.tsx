@@ -1,12 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './App.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard/Dashboard'
 import {ToastContainer} from 'react-toastify'
 import {Route, Routes} from 'react-router-dom'
 import Login from './pages/Login/Login'
+import {authActions} from './redux/auth-reducer'
+import {useDispatch} from 'react-redux'
+import {TypedDispatch} from './redux/redux-store'
 
 const App = () => {
+    const dispatch = useDispatch<TypedDispatch>()
+
+    useEffect(() => {
+        const token = localStorage.getItem('access')
+        if (token) {
+            dispatch(authActions.setIsAuth(true))
+        }
+
+    }, [dispatch])
+
     return (
         <>
             <Routes>
