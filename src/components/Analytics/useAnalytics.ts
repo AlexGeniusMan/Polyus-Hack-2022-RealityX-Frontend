@@ -1,6 +1,7 @@
 import {createRef, useCallback, useEffect, useState} from 'react'
+import {getCurrentData, getCurrentTime} from '../../utils/utils'
 
-export const useAnalytics = () => {
+export const useAnalytics = (values: any) => {
     const [data, setData] = useState<any>( [
         {
             name: 'Page A',
@@ -75,6 +76,17 @@ export const useAnalytics = () => {
             })
         }
     }, []);
+
+    useEffect(() => {
+        if(values && values.length > 0) {
+            setData(
+                values.map((item: any, index: number) => ({
+                    ...item,
+                    timestamp: getCurrentData(new Date(item.timestamp)) + ' ' + getCurrentTime(new Date(item.timestamp))
+                }))
+            );
+        }
+    }, [values]);
 
     useEffect(() => {
         setState((old) => ({

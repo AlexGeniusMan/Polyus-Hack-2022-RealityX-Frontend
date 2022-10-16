@@ -1,9 +1,11 @@
 import {baseURL} from "./api";
 import axios from "axios";
-import {LogsDataType} from '../types/Types'
+import {AnalyzeFullnessDataType, LogsDataType} from '../types/Types'
 
 type LogsDataResponseType = {
     data: LogsDataType[]
+    fullness: AnalyzeFullnessDataType[]
+    is_oversize: boolean
 }
 
 export const logsApi = {

@@ -1,12 +1,13 @@
 import {BaseThunkType, InferActionsTypes} from "./redux-store";
-import {errorsHandler} from "../utils/utils";
+import {errorNotify, errorsHandler, infoNotify} from '../utils/utils'
 import {authActions, AuthActionsType} from './auth-reducer'
 import {logsApi} from '../api/logs-api'
-import {LogsDataType} from '../types/Types'
+import {AnalyzeFullnessDataType, LogsDataType} from '../types/Types'
 
 export type InitialStateType = typeof initialState
 let initialState = {
-    logs: [] as LogsDataType[]
+    logs: [] as LogsDataType[],
+    fullness: [] as AnalyzeFullnessDataType[],
 }
 
 const logsReducer = (state = initialState, action: LogsActionsType):InitialStateType  => {
@@ -14,7 +15,8 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
         case 'PH/STAT/GET_STAT':
             return {
                 ...state,
-                logs: action.payload.data
+                logs: action.payload.data,
+                fullness: action.payload.fullness,
             }
         default:
             return state;
@@ -24,8 +26,8 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
 export type LogsActionsType = InferActionsTypes<typeof statActions>
 
 export const statActions = {
-    statReceived: (data: LogsDataType[]) =>
-        ({type: 'PH/STAT/GET_STAT', payload: {data}} as const),
+    statReceived: (data: LogsDataType[], fullness: AnalyzeFullnessDataType[]) =>
+        ({type: 'PH/STAT/GET_STAT', payload: {data, fullness}} as const),
 }
 
 type ThunkType = BaseThunkType<LogsActionsType | AuthActionsType>
@@ -36,7 +38,8 @@ export const getLogs = (): ThunkType => {
         try {
             let data = await logsApi.getLogs()
             console.log('getLogs', data)
-            dispatch(statActions.statReceived(data.data))
+            if(data.is_oversize) errorNotify('Обнаружен негабарит')
+            dispatch(statActions.statReceived(data.data, data.fullness))
 
             dispatch(authActions.toggleIsFetching(false))
         } catch (e:any) {

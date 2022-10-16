@@ -9,3 +9,13 @@
     font-size: 14px;
 }
 
+.title {
+    color: #000;
+
+    padding: 4px 8px;
+
+    font-style: dt.$typo-font-p-semi-bold-style;
+    font-weight: dt.$typo-font-p-semi-bold-weight;
+    font-size: 16px;
+    line-height: dt.$typo-font-p-semi-bold-line-height;
+}

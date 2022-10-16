@@ -56,3 +56,8 @@ export type LogsDataType = {
     amount: number,
     fullness: number,
 }
+
+export type AnalyzeFullnessDataType = {
+    value: string,
+    timestamp: string,
+}
