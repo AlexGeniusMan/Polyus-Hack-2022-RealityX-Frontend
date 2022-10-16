@@ -31,8 +31,8 @@ export type TableClassesColumnsType = {
 }
 export type TableClassesDataType = {
     class: number
-    min: number
-    max: number
+    min: number | string
+    max: number | string
     result: string
     key: string
 }
@@ -46,8 +46,8 @@ export type TableLogsDataType = {
     key: number | string
 }
 export type TableClassesValueType = {
-    min: number
-    max: number
+    min: string
+    max: string
 }
 export type LogsDataType = {
     timestamp: string,

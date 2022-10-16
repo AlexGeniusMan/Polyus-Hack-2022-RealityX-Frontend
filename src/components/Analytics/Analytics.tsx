@@ -8,10 +8,11 @@ import {getLogs} from '../../redux/logs-reducer'
 const Analytics = () => {
     const dispatch = useDispatch<TypedDispatch>()
     const fullness = useSelector((state: AppStateType) => state.logs.fullness)
+    const classes = useSelector((state: AppStateType) => state.logs.classes)
 
     useEffect(() => {
         setInterval(() => {
-            dispatch(getLogs())
+            dispatch(getLogs(classes[6].max, classes[5].max, classes[4].max, classes[3].max, classes[2].max, classes[1].max, classes[0].max))
         }, 1000)
     }, [])
 

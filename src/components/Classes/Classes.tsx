@@ -3,9 +3,13 @@ import styles from './Classes.module.scss'
 import TableComponent from '../TableComponent/TableComponent'
 import {useClasses} from './useClasses'
 import {Button} from '../Button/Button'
+import {useSelector} from 'react-redux'
+import {AppStateType} from '../../redux/redux-store'
 
 const Classes = () => {
-    const {columns, data, changing, handleButtonClick, handleSave} = useClasses()
+    const classes = useSelector((state: AppStateType) => state.logs.classes)
+
+    const {columns, data, changing, handleButtonClick, handleSave} = useClasses(classes)
 
     return (
         <div className={styles['container']}>

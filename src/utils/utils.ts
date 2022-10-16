@@ -13,7 +13,7 @@ export const getCurrentTime = (date?: Date) => {
 
 export const getCurrentData = (date?: Date) => {
     const localDate = date || new Date()
-    return ('0'+localDate.getDate()).slice(-2)+':'+('0'+localDate.getMonth()+1).slice(-2)+':'+('0'+localDate.getFullYear()).slice(-2)
+    return ('0'+localDate.getDate()).slice(-2)+':'+('0'+String(Number(localDate.getMonth()) + 1)).slice(-2)+':'+('0'+localDate.getFullYear()).slice(-2)
 }
 
 export const stopwatch = (date?: Date) => {
