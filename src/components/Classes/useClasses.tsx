@@ -6,6 +6,7 @@ import {logsActions} from '../../redux/logs-reducer'
 import {useDispatch} from 'react-redux'
 
 export const useClasses = (classes: any) => {
+    const dispatch = useDispatch()
     const [changing, setChanging] = useState<boolean>(false)
 
     const [value, setValue] = useState<TableClassesValueType[]>()
@@ -33,13 +34,13 @@ export const useClasses = (classes: any) => {
             tempValue.map((item, index) => index !== rowIndex ? item :
                 {
                     ...item,
-                    [type]: Number(e.target.value)
+                    [type]: e.target.value
                 }
             )
         )
     }, [changing])
     const handleSave = useCallback(() => {
-        logsActions.changeClasses(tempValue)
+        dispatch(logsActions.changeClasses(tempValue))
         setValue(tempValue)
         setTempValue([])
         setChanging(false)

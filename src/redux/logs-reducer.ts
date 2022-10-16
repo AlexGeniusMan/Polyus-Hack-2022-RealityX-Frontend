@@ -38,6 +38,7 @@ let initialState = {
             max: '40',
         },
     ] as TableClassesValueType[],
+    oversize: '250' as string,
 }
 
 const logsReducer = (state = initialState, action: LogsActionsType):InitialStateType  => {
@@ -48,10 +49,15 @@ const logsReducer = (state = initialState, action: LogsActionsType):InitialState
                 logs: action.payload.data,
                 fullness: action.payload.fullness,
             }
-        case 'PH/STAT/CHANGE_CLASSES':
+        case 'PH/LOGS/CHANGE_CLASSES':
             return {
                 ...state,
                 classes: action.payload.classes,
+            }
+        case 'PH/STAT/CHANGE_OVERSIZE':
+            return {
+                ...state,
+                oversize: action.payload.oversize,
             }
         default:
             return state;
@@ -64,16 +70,18 @@ export const logsActions = {
     statReceived: (data: LogsDataType[], fullness: AnalyzeFullnessDataType[]) =>
         ({type: 'PH/STAT/GET_STAT', payload: {data, fullness}} as const),
     changeClasses: (classes: TableClassesValueType[]) =>
-        ({type: 'PH/STAT/CHANGE_CLASSES', payload: {classes}} as const),
+        ({type: 'PH/LOGS/CHANGE_CLASSES', payload: {classes}} as const),
+    changeOversize: (oversize: string) =>
+        ({type: 'PH/STAT/CHANGE_OVERSIZE', payload: {oversize}} as const),
 }
 
 type ThunkType = BaseThunkType<LogsActionsType | AuthActionsType>
 
-export const getLogs = (class1: string, class2: string, class3: string, class4: string, class5: string, class6: string, class7: string): ThunkType => {
+export const getLogs = (oversize: string,class1: string, class2: string, class3: string, class4: string, class5: string, class6: string, class7: string): ThunkType => {
     return async(dispatch) => {
         dispatch(authActions.toggleIsFetching(true))
         try {
-            let data = await logsApi.getLogs(class1,class2,class3,class4,class5,class6,class7)
+            let data = await logsApi.getLogs(oversize,class1,class2,class3,class4,class5,class6,class7)
             console.log('getLogs', data)
             if(data.is_oversize) errorNotify('Обнаружен негабарит')
             dispatch(logsActions.statReceived(data.data, data.fullness))

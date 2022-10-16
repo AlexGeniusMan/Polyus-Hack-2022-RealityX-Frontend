@@ -6,20 +6,19 @@ import Icon from '../Icon/Icon'
 import {Input} from '../Input/Input'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStateType, TypedDispatch} from '../../redux/redux-store'
-import {setOversizeValue} from '../../redux/settings-reducer'
+import {logsActions} from '../../redux/logs-reducer'
 
 const Settings = () => {
     const dispatch = useDispatch<TypedDispatch>()
     const [value, setValue] = useState<string>('250')
-    const oversizeValue = useSelector((state: AppStateType) => state.settings.oversizeValue)
+    const oversize = useSelector((state: AppStateType) => state.logs.oversize)
 
     useEffect(() => {
-        setValue(String(oversizeValue))
-    }, [oversizeValue])
+        setValue(oversize)
+    }, [oversize])
 
     const handleSubmit = () => {
-        console.log(value)
-        dispatch(setOversizeValue(value))
+        dispatch(logsActions.changeOversize(value))
     }
 
     return (
